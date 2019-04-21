@@ -170,14 +170,14 @@
 
 /* split of the display after  845x */
 @media screen and (min-width: 845px) {
-  #maincontent {
+  .inside #maincontent {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
   }
 
-  #restaurant-container {
+  .inside #restaurant-container {
     order: 1;
     width: 50%;
     border-left: none;
@@ -186,7 +186,7 @@
     border-top: 1px solid black;
   }
 
-  #reviews-container {
+  .inside #reviews-container {
     order: 3;
     width: 100%;
   }
@@ -197,7 +197,7 @@
     border-right: none;
   }
 
-  #map-container {
+  .inside #map-container {
     order: 2;
     width: 50%;
     border: none;
