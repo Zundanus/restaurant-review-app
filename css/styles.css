@@ -42,11 +42,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #444;
   border: 1px solid black;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -75,8 +76,6 @@ nav h1 a {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 0;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
     height: 10%;
     width: 100%;
 }
@@ -84,6 +83,7 @@ nav h1 a {
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
+		font-size: 1.0rem;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -108,7 +108,6 @@ nav h1 a {
 #map-container {
   display: block;
   width: 100%;
-  border: 1px solid black;
 }
 
 #map {
@@ -227,7 +226,6 @@ nav h1 a {
   display: block;
 }
 .inside #map {
-  border: 1px solid black;
   background-color: white;
   max-height: 100%;
   max-width: 100%;
@@ -235,6 +233,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   max-width: 100%;
+	margin-top: 10px;
 }
 #restaurant-name {
   width: 95%;
@@ -273,7 +272,11 @@ nav h1 a {
 	width: 90%;
 }
 #reviews-container {
-  margin: auto;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+#reviews-container h2{
+margin: 15px 0 0px;
 }
 .review-title {
   margin: 10px 0 10px 0;
@@ -289,15 +292,16 @@ nav h1 a {
 }
 .review-name, .review-date, .review-rating {
   font-weight: bold;
-  font-size: 20pt;
+  font-size: 1rem;
 }
 #reviews-list li {
-  margin: 10px auto 10px auto;
+  margin: 2px;
+	margin-top: 10px;
   background-color: #fff;
   border: 1px solid black;
   display: block;
   list-style-type: none;
-  width: 75%;
+  width: 84%;
   padding: 5%;
 }
 #reviews-list li p {
