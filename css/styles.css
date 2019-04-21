@@ -107,7 +107,7 @@ nav h1 a {
 /* ====================== Map ====================== */
 #map-container {
   display: block;
-  width: 99%;
+  width: 100%;
   border: 1px solid black;
 }
 
@@ -171,8 +171,8 @@ nav h1 a {
   border: 1px solid black;
   font-family: Arial,sans-serif;
   margin: auto;
-  margin-bottom: 5px;
-  height: 350px;
+  margin-bottom: 10px;
+	padding-bottom: 5px;
   text-align: center;
   width: 100%;
 }
@@ -183,6 +183,7 @@ nav h1 a {
   margin: auto;
   margin-top: 10px;
 	max-width: 250px;
+	max-height: 250px;
   height: 50%;
 }
 
