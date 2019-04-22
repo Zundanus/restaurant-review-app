@@ -23,6 +23,8 @@ The **Restaurant Reviews** projects, was trasformd from a static webpage to a mo
 ## Acknowledgements
 The following seits and resources where used to develop or inspire parts of this program:
 
+the original code comes from https://github.com/udacity/mws-restaurant-stage-1
 Mentors on the Udacity Classroom
 Fellow course mates
 instructions on how to get started https://www.youtube.com/watch?v=TxXwlOAXUko
+Udacity study jam 3 from MOHAMED RIAAD https://www.youtube.com/watch?v=TxXwlOAXUko
