@@ -33,7 +33,7 @@ initMap = () => {
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
   });
-}
+};
 
 /* window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
@@ -56,12 +56,12 @@ initMap = () => {
  */
 fetchRestaurantFromURL = (callback) => {
   if (self.restaurant) { // restaurant already fetched!
-    callback(null, self.restaurant)
+    callback(null, self.restaurant);
     return;
   }
   const id = getParameterByName('id');
   if (!id) { // no id found in URL
-    error = 'No restaurant id in URL'
+    error = 'No restaurant id in URL';
     callback(error, null);
   } else {
     DBHelper.fetchRestaurantById(id, (error, restaurant) => {
@@ -71,10 +71,10 @@ fetchRestaurantFromURL = (callback) => {
         return;
       }
       fillRestaurantHTML();
-      callback(null, restaurant)
+      callback(null, restaurant);
     });
   }
-}
+};
 
 /**
  * Create restaurant HTML and add it to the webpage
@@ -90,7 +90,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -102,7 +102,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   }
   // fill reviews
   fillReviewsHTML();
-}
+};
 
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
@@ -125,7 +125,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     row.setAttribute('aria-label', `hours ${key} ${operatingHours[key]}`);
     row.setAttribute('tabindex', '0');
   }
-}
+};
 
 /**
  * Create all reviews HTML and add them to the webpage.
@@ -147,7 +147,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     ul.appendChild(createReviewHTML(review));
   });
   container.appendChild(ul);
-}
+};
 
 /**
  * Create review HTML and add it to the webpage.
@@ -177,12 +177,12 @@ createReviewHTML = (review) => {
   li.setAttribute('aria-label', `review ${review.name} ${review.date} rating ${review.rating} ${review.comments}`);
   li.setAttribute('tabindex', '0');
   return li;
-}
+};
 
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant=self.restaurant) => {
+fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
@@ -190,7 +190,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   /* Add aria label and focus to "review" for accessibility */
   li.setAttribute('aria-label', `breadcrumb review ${restaurant.name}`);
   li.setAttribute('tabindex', '0');
-}
+};
 
 /**
  * Get a parameter by name from page URL.
@@ -206,4 +206,4 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+};
