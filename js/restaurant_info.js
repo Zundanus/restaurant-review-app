@@ -84,6 +84,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  /* Add aria label and  focus to "address" for accessibility */
+  address.setAttribute('aria-label', `restaurant address ${restaurant.address}`);
+  address.setAttribute('tabindex', '0');
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
@@ -118,6 +121,9 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     row.appendChild(time);
 
     hours.appendChild(row);
+    /* Add aria label and focus to "hours" for accessibility */
+    row.setAttribute('aria-label', `hours ${key} ${operatingHours[key]}`);
+    row.setAttribute('tabindex', '0');
   }
 }
 
@@ -167,7 +173,9 @@ createReviewHTML = (review) => {
   comments.innerHTML = review.comments;
   comments.classList.add('review-comments');
   li.appendChild(comments);
-
+  /* Add aria label and focus to "review" for accessibility */
+  li.setAttribute('aria-label', `review ${review.name} ${review.date} rating ${review.rating} ${review.comments}`);
+  li.setAttribute('tabindex', '0');
   return li;
 }
 
@@ -179,6 +187,9 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
+  /* Add aria label and focus to "review" for accessibility */
+  li.setAttribute('aria-label', `breadcrumb review ${restaurant.name}`);
+  li.setAttribute('tabindex', '0');
 }
 
 /**
