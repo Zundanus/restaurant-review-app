@@ -1,11 +1,11 @@
-const staticCacheName = 'resturant-app-v1';
-
+const staticCacheName = 'resturant-app-v4';
 
 const cacheURLs = [
   '/',
   '/index.html',
   '/restaurant.html',
   '/css/styles.css',
+  'css/styles-responsive.css',
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
@@ -22,8 +22,8 @@ const cacheURLs = [
   '/img/10.jpg'
 ];
 
+
 self.addEventListener('install', function(event) {
-  console.log('sw installing');
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll(cacheURLs);
@@ -35,6 +35,20 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
+    })
+  );
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('resturant-app') && cacheName != staticCacheName;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
     })
   );
 });
