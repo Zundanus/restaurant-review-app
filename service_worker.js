@@ -1,11 +1,11 @@
-const staticCacheName = 'resturant-app-v4';
+const staticCacheName = 'resturant-app-v6';
 
 const cacheURLs = [
   '/',
   '/index.html',
   '/restaurant.html',
   '/css/styles.css',
-  'css/styles-responsive.css',
+  '/css/styles-responsive.css',
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
